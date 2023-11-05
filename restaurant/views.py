@@ -15,6 +15,7 @@ class UserViewSet(ModelViewSet):
 class BookingViewSet(ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    permission_classes = [permissions.IsAuthenticated] 
         
 class MenuItemsView(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
